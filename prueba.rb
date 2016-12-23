@@ -1,5 +1,14 @@
-@bake_time = [10, "torta de jamon", 15, "torta de milanesa", 20, "torta de pastor"]
-p @bake_time.each do |time_torta, torta|
-  puts time_torta
-  puts torta
-end 
+class A
+  def hello; puts "hello"; end
+  def goodbye; puts "goodbye"; end
+end
+
+class B < A # B inherits from A
+  def yo; puts "yo"; end
+end
+
+A.new.hello #=> "hello"
+B.new.hello #=> "hello"
+B.new.goodbye #=> "goodbye"
+B.new.yo #=> "yo"
+A.new.yo #=> undefined method `yo'
